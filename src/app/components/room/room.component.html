@@ -1,0 +1,126 @@
+<div class="card mb-3">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body">
+        <h4 class="card-title">Philosophy</h4>
+        <h5 class="card-title">Mann ki baat by modi ji</h5>
+        <p class="card-text">blah blah blah created by @Vivek </p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+</div>
+<div>
+    <div *ngFor="let msg of MessageArray">
+        <div [ngClass]="['card',getRandomClass(),'mb-3']" style="max-width: 18rem;">
+            <div class="card-header">{{msg.user}}</div>
+            <div [ngClass]="['card-body',getTextclass()]">
+                <h5 class="card-title">{{msg.body}}</h5>
+                <p class="card-text">{{msg.room}} {{msg.updated | timeAgo}} {{msg.created | date:'shortime'}}</p>
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="['card',getRandomClass(),'mb-3']" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div [ngClass]="['card-body',getTextclass()]">
+            <h5 class="card-title">Secondary card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+    </div>
+    <div [ngClass]="['card',getRandomClass(),'mb-3']" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div [ngClass]="['card-body',getTextclass()]">
+            <h5 class="card-title">Success card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+    </div>
+    <!-- <div [ngClass]="['card',getRandomClass(),'mb-3']" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div [ngClass]="['card-body',{'text-secondary': indx}]">
+            <h5 class="card-title">Danger card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+    </div>
+    <div [ngClass]="['card',getRandomClass(),'mb-3']" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div [ngClass]="['card-body',{'text-secondary': indx}]">
+            <h5 class="card-title">Warning card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+    </div>
+    <div [ngClass]="['card',getRandomClass(),'mb-3']" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div [ngClass]="['card-body',{'text-secondary': indx}]">
+            <h5 class="card-title">Info card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+    </div>
+    <div [ngClass]="['card',getRandomClass(),'mb-3']" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div [ngClass]="['card-body',{'text-secondary': indx}]">
+            <h5 class="card-title">Light card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+    </div>
+    <div [ngClass]="['card',getRandomClass(),'mb-3']" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div [ngClass]="['card-body',{'text-secondary': indx}]">
+            <h5 class="card-title">Dark card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+    </div> -->
+</div>
+<footer class="bg-light text-center" style="margin-bottom: 0%;">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Form -->
+        <section class="">
+            <form [formGroup]="MessageForm" (ngSubmit)="submitForm()">
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center">
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <p class="pt-2">
+                            <strong>Discussion Form</strong>
+                        </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-5 col-12">
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <input type="text" formControlName="body" id="txtbody" class="form-control"
+                                placeholder="Message" value="" />
+                            <!-- <label class="form-label" for="form5Example27">Email address</label> -->
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary mb-4">
+                            Sent
+                        </button>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </form>
+        </section>
+        <!-- Section: Form -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>

@@ -1,0 +1,77 @@
+<!-- <ng-container *ngIf="registerUser; else elseBlock"> -->
+<section>
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-12 col-sm-7 col-md-6 m-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <svg class="mx-auto my-3 sg" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                            fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+                        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form">
+                            <div>
+                                <!-- <label for="first_name">First Name</label> -->
+                                <input class="form-control my-4 py-2" type="text" id="first_name"
+                                    formControlName="first_name" required placeholder="First Name">
+                                <!-- <div *ngIf="registrationForm.get('first_name').invalid && registrationForm.get('first_name').touched">
+                                First Name is required.
+                              </div> -->
+                            </div>
+
+                            <div>
+                                <!-- <label for="last_name">Last Name</label> -->
+                                <input class="form-control my-4 py-2" type="text" id="last_name"
+                                    formControlName="last_name" required placeholder="Last Name">
+                            </div>
+                            <div>
+                                <!-- <label for="phone_number">Phone Number</label> -->
+                                <input class="form-control my-4 py-2" type="text" id="phone_number"
+                                    formControlName="phone_number" required placeholder="phone number">
+
+                            </div>
+                            <div>
+                                <!-- <label for="username">Username</label> -->
+                                <input class="form-control my-4 py-2" type="text" id="username"
+                                    formControlName="username" required placeholder="username">
+                                <!-- <div *ngIf="registrationForm.get('username').invalid && registrationForm.get('username').touched">
+                                Username is required.
+                              </div> -->
+                            </div>
+
+                            <div>
+                                <!-- <label for="email">Email</label> -->
+                                <input class="form-control my-4 py-2" type="email" id="email" formControlName="email"
+                                    required placeholder="email">
+                                <!-- <div *ngIf="registrationForm.get('email').invalid && registrationForm.get('email').touched">
+                                Email is required and must be a valid email address.
+                              </div> -->
+                            </div>
+
+                            <div>
+                                <!-- <label for="password">Password</label> -->
+                                <input class="form-control my-4 py-2" type="password" id="password"
+                                    formControlName="password" required placeholder="password">
+                                <!-- <div *ngIf="registrationForm.get('password').invalid && registrationForm.get('password').touched">
+                                Password is required and must be at least 6 characters long.
+                              </div> -->
+                            </div>
+
+                            <button class="btn btn-primary" type="submit"
+                                [disabled]="registrationForm.invalid">Register</button>
+                            <button class="btn btn-secondary" style="margin-left: 15px;" type="button" (click)="onUpdate()">Update</button>
+                            <a routerLink="/login" class="nav-link">Already have an account ?</a>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- </ng-container> -->
+<!-- <ng-template #elseBlock> -->
+
+<!-- </ng-template> -->
